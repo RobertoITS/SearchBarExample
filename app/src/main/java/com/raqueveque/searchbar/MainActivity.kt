@@ -20,6 +20,11 @@ import androidx.core.view.MenuItemCompat
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
+    /**Los valores que deben ser modificados para su correcta funcion:
+     1. En themes, NoActionBar
+     2. Agregar las String correspondientes
+     3. Los colores correspondientes
+     4. Drawables y Menus**/
 
     private var toolbar: Toolbar? = null
     private var searchToolbar: Toolbar? = null
