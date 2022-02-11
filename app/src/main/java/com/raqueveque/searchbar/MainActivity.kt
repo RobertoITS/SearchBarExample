@@ -4,8 +4,6 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.graphics.Color
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -13,13 +11,13 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewAnimationUtils
 import android.widget.*
-import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.MenuItemCompat
-import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
+
     /**Los valores que deben ser modificados para su correcta funcion:
      1. En themes, NoActionBar
      2. Agregar las String correspondientes
@@ -34,9 +32,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
         setSearchToolbar()
+
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_home, menu)
@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         } else Log.d("toolbar", "setSearchtollbar: NULL")
     }
 
-    @SuppressLint("SoonBlockedPrivateApi", "CutPasteId")
+    @SuppressLint("CutPasteId", "SoonBlockedPrivateApi")
     fun initSearchView() {
         val searchView = searchMenu!!.findItem(R.id.action_filter_search).actionView as SearchView
 
@@ -149,8 +149,6 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    @SuppressLint("PrivateResource")
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     fun circleReveal(viewID: Int, posFromRight: Int, containsOverflow: Boolean, isShow: Boolean) {
         val myView = findViewById<View>(viewID)
         var width = myView.width
